@@ -1,0 +1,19 @@
+{
+  "name": "vuttr",
+  "version": "0.0.1",
+  "description": "Very Useful Tools to Remember",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dayvisonlemos/vuttr.git"
+  },
+  "author": "dayvison.lemos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dayvisonlemos/vuttr/issues"
+  },
+  "homepage": "https://github.com/dayvisonlemos/vuttr#readme"
+}
