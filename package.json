@@ -7,6 +7,7 @@
     "start": "node src/index.js",
     "dev": "nodemon --exec npm start",
     "test": "NODE_ENV=test jest --config jest.config.json",
+    "test:watch": "NODE_ENV=test jest --watch --config jest.config.json",
     "db-sync": "NODE_ENV=test node test/db.sync.js",
     "coverage": "NODE_ENV=test jest --config jest.config.json --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint config/index.js src/** test/**",
@@ -26,7 +27,9 @@
     "@flagcard/log": "^1.2.1",
     "config": "^3.2.2",
     "express": "^4.17.1",
-    "sequelize": "^5.21.1"
+    "http-status": "^1.4.0",
+    "sequelize": "^5.21.1",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "coveralls": "^3.0.7",

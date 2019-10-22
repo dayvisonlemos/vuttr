@@ -3,10 +3,16 @@ describe('Tools Controller', () => {
     const payload = {
       title: 'Notion',
       link: 'https://notion.so',
-      description: 'All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ',
+      description: 'All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.',
     };
-    const result = await request.post('/rest/tools', payload);
+    const { body, created } = await request.post('/rest/tools')
+      .send(payload);
 
-    expect(result.created).toBeTruthy();
+    expect(created).toBeTruthy();
+    expect(body).toHaveProperty('id');
+    expect(body).toHaveProperty('title', 'Notion');
+    expect(body).toHaveProperty('link', 'https://notion.so');
+    expect(body).toHaveProperty('description', 'All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.');
+    expect(body.id).not.toBeNull();
   });
 });
