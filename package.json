@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "NODE_ENV=test jest --config jest.config.json",
+    "coverage": "NODE_ENV=test jest --config jest.config.json --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint config/index.js src/** test/**",
     "lint:fix": "eslint config/index.js src/** test/** --fix"
   },
@@ -25,6 +26,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "coveralls": "^3.0.7",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
