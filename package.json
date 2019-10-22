@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "dev": "nodemon --exec npm start",
     "test": "NODE_ENV=test jest --config jest.config.json",
     "coverage": "NODE_ENV=test jest --config jest.config.json --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint config/index.js src/** test/**",
