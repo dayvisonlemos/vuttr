@@ -1,0 +1,16 @@
+{
+    "connection": {
+        "database": "test",
+        "username": "",
+        "password": "",
+        "params": {
+            "dialect": "sqlite",
+            "storage": "vuttr.sqlite",
+            "define": {
+                "underscored": true
+            },
+            "logging": false
+        }
+    }
+}
+  
