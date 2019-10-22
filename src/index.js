@@ -2,7 +2,7 @@ const os = require('os');
 const cluster = require('cluster');
 const config = require('config');
 const log = require('@flagcard/log');
-const {isProduction} = require('../config');
+const { isProduction } = require('../config');
 const server = require('./server');
 const { version, name, description } = require('../package');
 

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "NODE_ENV=test jest --config jest.config.json"
+    "test": "NODE_ENV=test jest --config jest.config.json",
+    "lint": "eslint config/index.js src/** test/**",
+    "lint:fix": "eslint config/index.js src/** test/** --fix"
   },
   "repository": {
     "type": "git",

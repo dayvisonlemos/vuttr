@@ -1,6 +1,5 @@
 module.exports = {
-    status: (req, res) => {
-        res.send('ok');
-    },
+  status: (req, res) => {
+    res.send('ok');
+  },
 };
-  
