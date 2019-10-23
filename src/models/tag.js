@@ -16,6 +16,10 @@ class Tag extends Model {
       tableName: 'tags',
     });
   }
+
+  static associate(models) {
+    this.belongsToMany(models.Tool, { foreignKey: 'tag_id', through: 'tool_tags', as: 'tools' });
+  }
 }
 
 module.exports = Tag;

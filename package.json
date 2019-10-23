@@ -9,6 +9,7 @@
     "test": "NODE_ENV=test jest --config jest.config.json",
     "test:watch": "NODE_ENV=test jest --watch --config jest.config.json",
     "db-sync": "NODE_ENV=test node test/db.sync.js",
+    "coverage:local": "NODE_ENV=test jest --config jest.config.json --coverage",
     "coverage": "NODE_ENV=test jest --config jest.config.json --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint config/index.js src/** test/**",
     "lint:fix": "eslint config/index.js src/** test/** --fix"

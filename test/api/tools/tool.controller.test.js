@@ -23,5 +23,6 @@ describe('Tools Controller', () => {
     expect(body).toHaveProperty('link', 'https://notion.so');
     expect(body).toHaveProperty('description', 'All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.');
     expect(body.id).not.toBeNull();
+    expect(body.tags).toEqual(payload.tags);
   });
 });
