@@ -1,20 +1,12 @@
-const ToolRepository = require('../tool.repository');
+const Repository = require('../repository');
 
 class ToolSave {
   constructor() {
-    this.repository = new ToolRepository();
+    this.repository = new Repository();
   }
 
   async save(data) {
-    const {
-      title, link, description, tags,
-    } = data;
-
-    const tool = await this.repository.save({
-      title, link, description, tags,
-    });
-
-    return tool;
+    return this.repository.saveTool(data);
   }
 }
 

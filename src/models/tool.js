@@ -19,10 +19,6 @@ class Tool extends Model {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      tags: {
-        type: DataTypes.JSON,
-        allowNull: false,
-      },
     }, {
       sequelize,
       tableName: 'tools',

@@ -9,7 +9,7 @@
             "define": {
                 "underscored": true
             },
-            "logging": true
+            "logging": false
         }
     }
 }
