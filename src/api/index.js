@@ -4,6 +4,6 @@ const status = require('./status');
 const tools = require('./tools');
 
 router.use(status);
-router.use('/rest', tools);
+router.use(tools);
 
 module.exports = router;
