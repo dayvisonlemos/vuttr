@@ -1,4 +1,10 @@
+const { Tool } = require('../../../src/models');
+
 describe('Tools Controller', () => {
+  afterEach(async () => {
+    await Tool.destroy({ where: {} });
+  });
+
   it('should save a tool', async () => {
     const payload = {
       title: 'Notion',
@@ -102,18 +108,16 @@ describe('Tools Controller', () => {
   });
   it('should remove duplicated tags and save a tool', async () => {
     const payload = {
-      title: 'Notion',
-      link: 'https://notion.so',
-      description: 'All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized.',
+      title: 'fastify',
+      link: 'https://www.fastify.io/',
+      description: 'Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.',
       tags: [
-        'api',
-        'json',
-        'schema',
-        'schema',
-        'api',
-        'schema',
-        'json',
-        'json',
+        'web',
+        'framework',
+        'node',
+        'web',
+        'framework',
+        'node',
       ],
     };
 
@@ -121,6 +125,21 @@ describe('Tools Controller', () => {
       .send(payload);
 
     expect(created).toBeTruthy();
-    expect(body.tags).toEqual(['api', 'json', 'schema']);
+    expect(body.tags).toEqual(['web', 'framework', 'node']);
+  });
+  it('should return badRequest for duplicated tool', async () => {
+    const payload = {
+      title: 'hotel',
+      link: 'https://github.com/typicode/hotel',
+      description: 'Local app manager. Start apps within your browser, developer tool with local .localhost domain and https out of the box.',
+      tags: ['node', 'organizing', 'webapps', 'domain', 'developer', 'https', 'proxy'],
+    };
+    await request.post('/tools').send(payload);
+
+    const { body, badRequest } = await request.post('/tools')
+      .send(payload);
+
+    expect(badRequest).toBeTruthy();
+    expect(body).toHaveProperty('message', 'title must be unique');
   });
 });

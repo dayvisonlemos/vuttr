@@ -1,5 +1,5 @@
 const router = require('express').Router({ mergeParams: true });
-const BadRequestException = require('../../exceptions/bad-request-exception');
+const { BadRequestException } = require('../../exceptions');
 const controller = require('./controller');
 
 const validate = (req, res, next) => {
