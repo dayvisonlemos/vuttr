@@ -26,6 +26,7 @@
   "homepage": "https://github.com/dayvisonlemos/vuttr#readme",
   "dependencies": {
     "@flagcard/log": "^1.2.1",
+    "@hapi/joi": "^16.1.8",
     "config": "^3.2.2",
     "express": "^4.17.1",
     "http-status": "^1.4.0",

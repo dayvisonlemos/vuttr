@@ -45,7 +45,7 @@ describe('Tools Controller', () => {
       .send(payload);
 
     expect(badRequest).toBeTruthy();
-    expect(body).toHaveProperty('message', 'Title is required');
+    expect(body).toHaveProperty('message', '"title" is required');
   });
   it('should return badRequest for null link', async () => {
     const payload = {
@@ -61,7 +61,7 @@ describe('Tools Controller', () => {
       .send(payload);
 
     expect(badRequest).toBeTruthy();
-    expect(body).toHaveProperty('message', 'Link is required');
+    expect(body).toHaveProperty('message', '"link" is required');
   });
   it('should return badRequest for null description', async () => {
     const payload = {
@@ -77,7 +77,7 @@ describe('Tools Controller', () => {
       .send(payload);
 
     expect(badRequest).toBeTruthy();
-    expect(body).toHaveProperty('message', 'Description is required');
+    expect(body).toHaveProperty('message', '"description" is required');
   });
   it('should return badRequest for null tags', async () => {
     const payload = {
@@ -90,7 +90,7 @@ describe('Tools Controller', () => {
       .send(payload);
 
     expect(badRequest).toBeTruthy();
-    expect(body).toHaveProperty('message', 'Tags is required and cannot be null');
+    expect(body).toHaveProperty('message', '"tags" is required');
   });
   it('should return badRequest for empty tags', async () => {
     const payload = {
@@ -104,7 +104,7 @@ describe('Tools Controller', () => {
       .send(payload);
 
     expect(badRequest).toBeTruthy();
-    expect(body).toHaveProperty('message', 'Tags is required and cannot be null');
+    expect(body).toHaveProperty('message', '"tags" must contain at least 1 items');
   });
   it('should remove duplicated tags and save a tool', async () => {
     const payload = {
