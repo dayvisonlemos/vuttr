@@ -1,7 +1,7 @@
 const { Tool, Tag } = require('../../models');
 
 const find = async (tagName) => {
-  const where = {};
+  const where = { deleted_at: null };
   if (tagName) {
     const tags = await Tag.findAll({
       where: { name: tagName },
@@ -13,6 +13,7 @@ const find = async (tagName) => {
   }
   const result = await Tool.findAll({
     where,
+    attributes: ['id', 'title', 'link', 'description'],
     include: [{
       association: 'tags', attributes: ['name'], through: { attributes: [] },
     }],
@@ -38,8 +39,11 @@ const findOrCreateTag = (name) => {
 
 const saveTool = tool => Tool.create(tool);
 
+const remove = id => Tool.update({ deleted_at: new Date() }, { where: { id } });
+
 module.exports = {
   find,
   saveTool,
   findOrCreateTag,
+  remove,
 };
