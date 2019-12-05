@@ -7,6 +7,7 @@
             "dialect": "sqlite",
             "storage": "vuttr.sqlite",
             "define": {
+                "timestamps": false,
                 "underscored": true
             },
             "logging": false
