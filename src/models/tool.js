@@ -20,6 +20,9 @@ class Tool extends Model {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      deleted_at: {
+        type: DataTypes.DATE,
+      },
     }, {
       sequelize,
       tableName: 'tools',

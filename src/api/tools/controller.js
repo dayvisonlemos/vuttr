@@ -1,6 +1,7 @@
 const httpStatus = require('http-status');
 const toolSave = require('./usecase/tool.save');
 const toolFind = require('./usecase/tool.find');
+const toolRemove = require('./usecase/tool.remove');
 
 const find = async (req, res, next) => {
   try {
@@ -20,7 +21,18 @@ const save = async (req, res, next) => {
   }
 };
 
+const remove = async (req, res, next) => {
+  try {
+    const { params: { id } } = req;
+    await toolRemove.remove(id);
+    return res.sendStatus(httpStatus.NO_CONTENT);
+  } catch (err) {
+    return next(err);
+  }
+};
+
 module.exports = {
   find,
   save,
+  remove,
 };

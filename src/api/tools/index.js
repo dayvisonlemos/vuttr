@@ -23,5 +23,6 @@ const validate = (req, res, next) => {
 
 router.get('/tools', controller.find);
 router.post('/tools', validate, controller.save);
+router.delete('/tools/:id', controller.remove);
 
 module.exports = router;
