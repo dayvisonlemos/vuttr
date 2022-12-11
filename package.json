@@ -27,7 +27,7 @@
   "dependencies": {
     "@flagcard/log": "^1.2.1",
     "config": "^3.2.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-status": "^1.4.0",
     "sequelize": "^5.21.1",
     "sqlite3": "^4.1.0",
